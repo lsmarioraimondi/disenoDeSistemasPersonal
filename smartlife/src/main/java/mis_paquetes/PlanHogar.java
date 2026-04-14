@@ -1,14 +1,14 @@
 package mis_paquetes;
 
 public class PlanHogar extends Plan {
-    private double tarifaFinal;
+    private double tarifaBase;
 
     public PlanHogar(double tarifaBase) {
-        this.tarifaFinal = tarifaBase;
+        this.tarifaBase = tarifaBase;
     }
 
     @Override
-    public double calcularMonto(Cliente cliente) {
-        return tarifaFinal;
+    public double calcularMonto(Cliente cliente){
+        return tarifaBase;
     }
-}// hola
+}

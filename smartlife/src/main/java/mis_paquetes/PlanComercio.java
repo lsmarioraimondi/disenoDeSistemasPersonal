@@ -1,15 +1,17 @@
 package mis_paquetes;
 
 public class PlanComercio extends Plan {
-    private double tarifaFinal;
+    private double tarifaBase;
+    private double adicionalPorDispositivo;
 
-    public PlanComercio(double tarifaBase, double adicionalPorDispositivo){
-        this.tarifaFinal = tarifaBase + adicionalPorDispositivo;
+    public PlanComercio(double tarifaBase, double adicionalPorDispositivo) {
+        this.tarifaBase = tarifaBase;
+        this.adicionalPorDispositivo = adicionalPorDispositivo;
     }
 
     @Override
     public double calcularMonto(Cliente cliente){
-        return tarifaFinal;
+        return tarifaBase + (adicionalPorDispositivo * cliente.getCantidadDispositivos());
     }
+
 }
-// hola
